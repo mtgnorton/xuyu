@@ -1,5 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<!-- saved from url=(0065)/xuyu/Public/wufazhuce/vol.975.htm#tab-cuestion -->
+<!-- saved from url=(0065)/Xuyu/Public/wufazhuce/vol.975.htm#tab-cuestion -->
 <html xmlns:wb="http://open.weibo.com/wb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>VOL.975 - 「ONE · 一个」</title>
@@ -18,23 +18,23 @@
 <meta name="description" property="og:description" itemprop="description" content="《楼间花园》这一晚，笑笑跟大壮彻底摊牌了：她跟踪过大壮，发现大壮每晚都会去同一间从来没有提过的公寓。 / 发自拍的时候要说什么才显得自然？">
 <meta property="og:image" content="http://pic.yupoo.com/hanapp/EGwgfG29/custom.jpg">
 
-<script src="/xuyu/Public/index_css_js/jquery.min.js" tppabs="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/xuyu/Public/wubfazhuce/bootstrap.min.css" tppabs="http://s2-cdn.wufazhuce.com/bootstrap3/css/bootstrap.min.css">
-<script src="/xuyu/Public/index_css_js/bootstrap.min.js" tppabs="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/Xuyu/Public/index_css_js/jquery.min.js" tppabs="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/Xuyu/Public/wubfazhuce/bootstrap.min.css" tppabs="http://s2-cdn.wufazhuce.com/bootstrap3/css/bootstrap.min.css">
+<script src="/Xuyu/Public/index_css_js/bootstrap.min.js" tppabs="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="/xuyu/Public/wufazhuce/one.css" tppabs="http://s2-cdn.wufazhuce.com/css/one.css">
+<link rel="stylesheet" href="/Xuyu/Public/wufazhuce/one.css" tppabs="http://s2-cdn.wufazhuce.com/css/one.css">
 <link rel="shortcut icon" type="image/x-icon" href="http://s2-cdn.wufazhuce.com/images/favicons/favicon.ico">
 <link rel="apple-touch-icon" href="http://s2-cdn.wufazhuce.com/images/favicons/apple-touch-icon.png">
 
 <!--[if lt IE 9]>
-<script src="/xuyu/Public/wufazhuce/html5shiv.min.js" tppabs="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
-<script src="/xuyu/Public/wufazhuce/respond.min.js" tppabs="http://libs.useso.com/js/respond.js/1.4.2/respond.min.js"></script>
+<script src="/Xuyu/Public/wufazhuce/html5shiv.min.js" tppabs="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+<script src="/Xuyu/Public/wufazhuce/respond.min.js" tppabs="http://libs.useso.com/js/respond.js/1.4.2/respond.min.js"></script>
 <link href="http://s2-cdn.wufazhuce.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
 <link href="/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-<script src="/xuyu/Public/wufazhuce/respond.proxy.js" tppabs="http://wufazhuce.com/respond.proxy.js"></script>
+<script src="/Xuyu/Public/wufazhuce/respond.proxy.js" tppabs="http://wufazhuce.com/respond.proxy.js"></script>
 <![endif]-->
 
-<script type="text/javascript" src="/xuyu/Public/index_css_js/embed.js"></script><link rel="stylesheet" type="text/css" href="/xuyu/Public/index_css_js/embed.css"><script src="/xuyu/Public/index_css_js/qc.php" type="text/javascript" charset="utf-8"></script></head>
+<script type="text/javascript" src="/Xuyu/Public/index_css_js/embed.js"></script><link rel="stylesheet" type="text/css" href="/Xuyu/Public/index_css_js/embed.css"><script src="/Xuyu/Public/index_css_js/qc.php" type="text/javascript" charset="utf-8"></script></head>
 
 <body id="angOne_view">
 
@@ -87,19 +87,19 @@
 	    <div class="row">
 		    <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 			    <ul class="nav navbar-nav">
-				  	<li class="active"><a href="/xuyu/Public/wufazhuce/vol.975.htm#tab-imagen" data-toggle="tab">
+				  	<li class="active"><a href="/Xuyu/Public/wufazhuce/vol.975.htm#tab-imagen" data-toggle="tab">
 				  		<span class="visible-xs">ONE<br>首页</span>
 				  		<span class="hidden-xs">ONE 首页</span>
 				  	</a></li>
-				  	<li><a href="/xuyu/Public/wufazhuce/vol.975.htm#tab-articulo" data-toggle="tab">
+				  	<li><a href="/Xuyu/Public/wufazhuce/vol.975.htm#tab-articulo" data-toggle="tab">
 				  		<span class="visible-xs">ONE<br>文章</span>
 				  		<span class="hidden-xs">ONE 文章</span>
 				  	</a></li>
-				  	<li><a href="/xuyu/Public/index_css_js/VOL.975 - 「ONE · 一个」.html" data-toggle="tab">
+				  	<li><a href="/Xuyu/Public/index_css_js/VOL.975 - 「ONE · 一个」.html" data-toggle="tab">
 				  		<span class="visible-xs">ONE<br>问题</span>
 				  		<span class="hidden-xs">ONE 问题</span>
 				  	</a></li>
-				  	<li><a href="/xuyu/Public/wufazhuce/vol.975.htm#tab-cosas" data-toggle="tab">
+				  	<li><a href="/Xuyu/Public/wufazhuce/vol.975.htm#tab-cosas" data-toggle="tab">
 				  		<span class="visible-xs">ONE<br>东西</span>
 				  		<span class="hidden-xs">ONE 东西</span>
 				  	</a></li>
@@ -121,7 +121,7 @@
 		<div class="tab-content">
 		  	<div class="tab-pane active" id="tab-imagen">
 		  		<div class="one-imagen">
-		  			<img src="/xuyu/Public/index_css_js/custom.jpg" tppabs="http://pic.yupoo.com/hanapp/EGwgfG29/custom.jpg" alt="">		  		</div>
+		  			<img src="/Xuyu/Public/index_css_js/custom.jpg" tppabs="http://pic.yupoo.com/hanapp/EGwgfG29/custom.jpg" alt="">		  		</div>
                 <div class="one-imagen-footer">
 					<div class="one-titulo">
 						VOL.975					</div>
@@ -162,12 +162,12 @@
 	                    }
 	                    document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
 	                })();
-	                </script><iframe version="1.0" src="/xuyu/Public/index_css_js/cgi_qzshare_likeurl(3).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
-	                <script src="/xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+	                </script><iframe version="1.0" src="/Xuyu/Public/index_css_js/cgi_qzshare_likeurl(3).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
+	                <script src="/Xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
 		  		</div>
 
 		        <div class="one-comentarios">
-		            <div id="vanilla-comments"><div class="vn-loading" style="text-align: center;"><img src="/xuyu/Public/index_css_js/progress.gif"></div><iframe id="vanilla58903" name="vanilla58903" src="about:blank" scrolling="no" frameborder="0" width="100%" height="0" style="width: 100%; border: 0px; display: block; height: 0px;"></iframe></div>
+		            <div id="vanilla-comments"><div class="vn-loading" style="text-align: center;"><img src="/Xuyu/Public/index_css_js/progress.gif"></div><iframe id="vanilla58903" name="vanilla58903" src="about:blank" scrolling="no" frameborder="0" width="100%" height="0" style="width: 100%; border: 0px; display: block; height: 0px;"></iframe></div>
 		            <script type="text/javascript">
 		            var vanilla_forum_url = 'http://wufazhuce.org/';
 		            var vanilla_identifier = "http://wufazhuce.com/one/one-vol.975";
@@ -365,8 +365,8 @@
 		                    }
 		                    document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
 		                })();
-		                </script><iframe version="1.0" src="/xuyu/Public/index_css_js/cgi_qzshare_likeurl.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
-		                <script src="/xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+		                </script><iframe version="1.0" src="/Xuyu/Public/index_css_js/cgi_qzshare_likeurl.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
+		                <script src="/Xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
 			  		</p>
 
 			        <div class="one-comentarios">
@@ -445,8 +445,8 @@
 		                    }
 		                    document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
 		                })();
-		                </script><iframe version="1.0" src="/xuyu/Public/index_css_js/cgi_qzshare_likeurl(2).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
-		                <script src="/xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+		                </script><iframe version="1.0" src="/Xuyu/Public/index_css_js/cgi_qzshare_likeurl(2).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
+		                <script src="/Xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
 			  		</div>
 
 			        <div class="one-comentarios">
@@ -461,7 +461,7 @@
 		  		<div class="one-cosas">
 
 			  		<div class="cosas-imagen">
-		  			<a rel="nofollow" target="_blank" href="javascript:if(confirm(%27http://m.dangdang.com/h5product/product.php?pid=23700096  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.dangdang.com/h5product/product.php?pid=23700096%27" tppabs="http://m.dangdang.com/h5product/product.php?pid=23700096"><img src="/xuyu/Public/index_css_js/JL9xU.jpg" tppabs="http://pic.yupoo.com/hanapp/EHipq6ZW/JL9xU.jpg" alt=""></a>			  		</div>
+		  			<a rel="nofollow" target="_blank" href="javascript:if(confirm(%27http://m.dangdang.com/h5product/product.php?pid=23700096  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.dangdang.com/h5product/product.php?pid=23700096%27" tppabs="http://m.dangdang.com/h5product/product.php?pid=23700096"><img src="/Xuyu/Public/index_css_js/JL9xU.jpg" tppabs="http://pic.yupoo.com/hanapp/EHipq6ZW/JL9xU.jpg" alt=""></a>			  		</div>
 
 			  		<h2 class="cosas-titulo">
 					<a rel="nofollow" target="_blank" href="javascript:if(confirm(%27http://m.dangdang.com/h5product/product.php?pid=23700096  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.dangdang.com/h5product/product.php?pid=23700096%27" tppabs="http://m.dangdang.com/h5product/product.php?pid=23700096">《与神对话》 <span style="font-size: 67%" class="glyphicon glyphicon-share"></span></a>			  		</h2>
@@ -491,8 +491,8 @@
 		                    }
 		                    document.write(['<a version="1.0" class="qzOpenerDiv" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
 		                })();
-		                </script><iframe version="1.0" src="/xuyu/Public/index_css_js/cgi_qzshare_likeurl(1).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
-		                <script src="/xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+		                </script><iframe version="1.0" src="/Xuyu/Public/index_css_js/cgi_qzshare_likeurl(1).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:145px; height:26px;" allowtransparency="true"></iframe>
+		                <script src="/Xuyu/Public/index_css_js/qzopensl.js" tppabs="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
 			  		</div>
 
 			        <div class="one-comentarios">
@@ -556,11 +556,11 @@ $(document).ready(function() {
 </div>
 
 
-<script src="/xuyu/Public/index_css_js/wb.js-appkey=1156389752.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1156389752" type="text/javascript" charset="utf-8"></script>
+<script src="/Xuyu/Public/index_css_js/wb.js-appkey=1156389752.js" tppabs="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1156389752" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff5c3b24a04c561936d708b55833d8294' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="/xuyu/Public/index_css_js/h.js" type="text/javascript"></script>
+</script><script src="/Xuyu/Public/index_css_js/h.js" type="text/javascript"></script>
 
 
 
