@@ -31,7 +31,7 @@ return array(
     TMPL_PARSE_STRING=>array(
         '__BOOT__'=>__ROOT__.'/Public/STATIC/bootstrap',
         '__JQUERY__'=>__ROOT__.'/Public/STATIC/jquery',
-        '__PUB__'=>__ROOT__.'/Public',
+            '__PUB__'=>__ROOT__.'/Public',
         '__ICON__'=>__ROOT__.'/Public/icon',
         '__JS__'=>__ROOT__.'/Public/js',
         '__STATIC__'=>__ROOT__.'/Public/STATIC',
