@@ -20,7 +20,7 @@ return array(
 ////    'DB_DSN'    => 'mysql:host=localhost;dbname=thinkphp;charset=UTF8',
 //    'DB_DSN' => 'mysql://root:@localhost:3306/thinkphp#utf8',
 
-    'SHOW_PAGE_TRACE'=>true,
+    'SHOW_PAGE_TRACE'=>false,
 //  'CONTROLLER_LEVEL'      =>  2,
 //    'TMPL_FILE_DEPR'=>'_',
 //    'VIEW_PATH'=>'./Theme/',
