@@ -39,6 +39,8 @@ class MainController extends Controller {
         }
 
     public function add(){
+        print_r($_POST);
+        return;
         $time=date('Y-m-d');
         echo $time;
         //echo $_POST['sentence'];

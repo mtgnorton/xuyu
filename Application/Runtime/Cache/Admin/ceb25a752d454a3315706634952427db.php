@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/Xuyu/Public/uploadify.css">
     <script src='/Xuyu/Public/jquery-1.11.3.min.js'></script>
     <script src='/Xuyu/Public/jquery.uploadify.min.js'></script>
+    <script type="text/javascript" src="/Xuyu/Public/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,8 @@
     句子<input name="sentence" type="text"/><br/>
     标题：<textarea name="title"></textarea><br/>
     作者：<textarea name="author"></textarea><br/>
-    内容：<textarea name="content"></textarea>
+
+    <textarea class="ckeditor" cols="80" id="editor1" name="content" rows="10" style="visibility: hidden; display: none;"></textarea>
     <input type="submit">
 </form>
 </body>

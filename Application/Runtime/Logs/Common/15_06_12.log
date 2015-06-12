@@ -133,3 +133,15 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000118s ]
 ERR: 无法加载模块:Img
 
+[ 2015-06-12T20:22:55+08:00 ] ::1 /Xuyu/Public/Uploads/test.mp3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000125s ]
+ERR: 无法加载模块:Public
+
+[ 2015-06-12T20:26:23+08:00 ] ::1 /Xuyu/Public/Uploads/test.mp3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+ERR: 无法加载模块:Public
+
