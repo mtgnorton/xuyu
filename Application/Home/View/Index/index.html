@@ -18,6 +18,8 @@
 <meta name="description" property="og:description" itemprop="description" content="《楼间花园》这一晚，笑笑跟大壮彻底摊牌了：她跟踪过大壮，发现大壮每晚都会去同一间从来没有提过的公寓。 / 发自拍的时候要说什么才显得自然？">
 <meta property="og:image" content="http://pic.yupoo.com/hanapp/EGwgfG29/custom.jpg">
 
+    <script src="__JQUERY__/jquery-2.1.1.min.js"></script>
+    <script src="__PUB__/JS/xuyujs.js"></script>
 <script src="__PUB__/index_css_js/jquery.min.js" tppabs="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
 <link rel="stylesheet" href="__PUB__/wufazhuce/bootstrap.min.css" tppabs="http://s2-cdn.wufazhuce.com/bootstrap3/css/bootstrap.min.css">
 <script src="__PUB__/index_css_js/bootstrap.min.js" tppabs="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -104,6 +106,15 @@
 	  	</div>
   	</div>
 </nav>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $("#btShowContent").click(function(){
+                $("#hideContent").toggle();
+            });
+        });
+
+    </script>
 
 <div class="one row">
     <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -114,7 +125,7 @@
 		  			<img src="__PUB__/index_css_js/custom.jpg" tppabs="http://pic.yupoo.com/hanapp/EGwgfG29/custom.jpg" alt="">		  		</div>
                 <div class="one-imagen-footer">
 					<div class="one-titulo">
-					冯英杰			</div>
+					{$author}		</div>
 					<div class="one-imagen-leyenda">
 						波点海洋——我走先<br>
 莫頔 作品<br>
@@ -123,14 +134,24 @@
 				</div>
                 <div class="one-cita-wrapper">
                     <div class="one-cita">
-						my name is mtg                    </div>
+						{$sentence}                 </div>
+                    <button id="btShowContent" name="showContent">查看具体内容</button>
                     <div class="one-pubdate">
-                        <p class="dom">9</p>
-                        <p class="may">Jun 2015</p>
+                        <p class="dom">{$day}</p>
+                        <p class="may">{$month} 2015</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                <div id="hideContent" style="display: none;" class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{$title}</h3>
+                    </div>
+                    <div class="panel-body">
+                      {$content}
+                    </div>
+                </div>
 
+                <!--<div id = "hideContent" style="display: none;">{$title}<br/>{$content}</div>-->
 
 <div id="footer">
     <div class="container">

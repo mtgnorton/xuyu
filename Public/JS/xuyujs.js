@@ -1,0 +1,7 @@
+
+
+function showHideContent(){
+
+    $("#hideContent").toggle();
+
+}
