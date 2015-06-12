@@ -1,16 +1,16 @@
 <?php
 return array(
     //'配置项'=>'配置值'
-    'DEFAULT_MODULE'=>'Admin',
+    'DEFAULT_MODULE'=>'Home',
 
 //
     'DB_TYPE' => 'mysql', // 数据库类型
     'DB_HOST'   => 'localhost', // 服务器地址
-    'DB_NAME'   => 'one', // 数据库名
+    'DB_NAME'   => 'xuyu', // 数据库名
     'DB_USER'   => 'root', // 用户名
     'DB_PWD'    => '', // 密码
     'DB_PORT'   => 3306, // 端口
-    'DB_PREFIX' => 'tp_',
+    'DB_PREFIX' => 'xuyu_',
     'DB_CHARSET'=> 'utf8',
 
 //    'DB_TYPE'   => 'pdo',
@@ -30,11 +30,12 @@ return array(
     'LOG_TYPE'              =>  'File',
     TMPL_PARSE_STRING=>array(
         '__BOOT__'=>__ROOT__.'/Public/STATIC/bootstrap',
-        '__JQUERY__'=>__ROOT__.'/Public/STATIC/jquery',
+        '___JQUERY__'=>__ROOT__.'/Public/STATIC/jquery',
             '__PUB__'=>__ROOT__.'/Public',
         '__ICON__'=>__ROOT__.'/Public/icon',
         '__JS__'=>__ROOT__.'/Public/js',
         '__STATIC__'=>__ROOT__.'/Public/STATIC',
+        //'__UPLOAD__'=>__ROOT__.'/Public/Uploads'
     )
 
 );
