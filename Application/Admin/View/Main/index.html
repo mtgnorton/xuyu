@@ -28,7 +28,6 @@
         </div>
         <br>
         <audio id="mus" controls="" name="media"><source src="__PUBLIC__/Uploads/test.mp3" type="audio/mpeg"></audio>
-        <div id="music"><img width="" src=""></div>
         <input id="mus_upload" name="photo" type="file" multiple="true" value="" />
         <div class="input-group">
 
@@ -73,12 +72,20 @@
     $('#img_upload').uploadify({
         'swf'      : '__PUBLIC__/uploadify.swf',
         'uploader' : '{:U("Admin/Main/uploadImage")}',   //上传的方法
+        'fileTypeExts' : '*.gif; *.jpg; *.png;',//限制文件格式
         'buttonText' : '图片上传',
         'onUploadSuccess' : function(file, data, response) {
+            var data = $.parseJSON(data);
+            if (!data['status']) {
+                alert(data['info']);
+                return false;
+            };
+
             //把所有上传的图片都放入DIV中
-            img += "<img width='200px' src='__PUBLIC__/Uploads/Images/"+data+"'>";
+            $path="__PUBLIC__/Uploads/Images/"+data.savename;
+            img += "<img width='200px' src='"+$path+"'>";
             $('#imgs').html(img);
-            $('#imgpath').val("__PUBLIC__/Uploads/Images/"+data);
+            $('#imgpath').val($path);
         }
     });
 
@@ -86,12 +93,19 @@
     $('#mus_upload').uploadify({
         'swf'      : '__PUBLIC__/uploadify.swf',
         'uploader' : '{:U("Admin/Main/uploadMusic")}',   //上传的方法
+        'fileTypeExts' : '*.mp3;*.wav',//限制文件格式
         'buttonText' : '音乐上传',
         'onUploadSuccess' : function(file, data, response) {
+            var data = $.parseJSON(data);
+            if (!data['status']) {
+                alert(data['info']);
+                return false;
+            };
+
             //把所有上传的图片都放入DIV中
 
             //img += "<img width='200px' src='__PUBLIC__/Uploads/Musics/"+data+"'>";
-            mus="__PUBLIC__/Uploads/Musics/"+data;
+            mus="__PUBLIC__/Uploads/Musics/"+data.savename;
             $('#mus').attr("src",mus);
             $('#muspath').val("__PUBLIC__/Uploads/Musics/"+data);
             //alert(data);

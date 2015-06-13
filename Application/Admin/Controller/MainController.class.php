@@ -101,13 +101,23 @@ class MainController extends Controller {
             //判断是否有图
             if($images){
                 $info=$images['Filedata']['savename'];
+                $data=array(
+                    'savename'=>$info,
+                    'savepath'=>$config['rootPath'].$images['Filedata']['savepath'],//保存路径
+                    'status'=>1,//状态
+                );
                 //print_r($info);
                 //返回文件地址和名给JS作回调用
-                echo $info;
+                //echo $info;
             }
             else{
-                $this->error($upload->getError());//获取失败信息
+                $data=array(
+                    'status'=>0,//状态
+                    'info'=>$upload->getError(),//错误信息
+                );
+                //$this->error($upload->getError());//获取失败信息
             }
+            $this->ajaxReturn($data);
         }
     }
 
@@ -128,13 +138,23 @@ class MainController extends Controller {
             //判断是否有图
             if($images){
                 $info=$images['Filedata']['savename'];
+                $data=array(
+                    'savename'=>$info,
+                    'savepath'=>$config['rootPath'].$images['Filedata']['savepath'],//保存路径
+                    'status'=>1,//状态
+                );
                 //print_r($info);
                 //返回文件地址和名给JS作回调用
-                echo $info;
+                //echo $info;
             }
             else{
-                $this->error($upload->getError());//获取失败信息
+                $data=array(
+                    'status'=>0,//状态
+                    'info'=>$upload->getError(),//错误信息
+                );
+                //$this->error($upload->getError());//获取失败信息
             }
+            $this->ajaxReturn($data);
         }
     }
 
