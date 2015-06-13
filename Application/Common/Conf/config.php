@@ -35,6 +35,7 @@ return array(
         '__ICON__'=>__ROOT__.'/Public/icon',
         '__JS__'=>__ROOT__.'/Public/js',
         '__STATIC__'=>__ROOT__.'/Public/STATIC',
+        '__ADMIN__'=>__ROOT__.'/Public/Admin'
         //'__UPLOAD__'=>__ROOT__.'/Public/Uploads'
     )
 
