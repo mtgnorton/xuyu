@@ -302,6 +302,71 @@
   	<!--</div>-->
 </nav>
 
+    <style type="text/css">
+        /**{*/
+        /* A universal page reset */
+        /*margin:0;*/
+        /*padding:0;*/
+        /*}*/
+
+        /*body{*/
+        /* Setting default text color, background and a font stack */
+        /*font-size:14px;*/
+        /*color:#ccc;*/
+        /*background-color:#141414;*/
+        /*font-family:Arial, Helvetica, sans-serif;*/
+        /*}*/
+
+        #neonText span{
+            width:700px;
+            height:150px;
+            position:absolute;
+            left:0;
+            top:0;
+
+            /*background:url('img/text.jpg') no-repeat left top;*/
+        }
+
+        span#version1{
+            z-index:100;
+        }
+
+        span#version2{
+            background-position:left bottom;
+            z-index:99;
+        }
+
+
+        #neonText{
+            height:150px;
+            margin:180px auto 0;
+            position:relative;
+            width:650px;
+            text-indent:-9999px;
+        }
+    </style>
+    <!--<div id = "hideContent" style="display: none;"><?php echo ($title); ?><br/><?php echo ($content); ?></div>-->
+    <script>
+        $(document).ready(function(){
+
+            setInterval(function(){
+
+                // Selecting only the visible layers:
+                var versions = $('.textVersion:visible');
+
+                if(versions.length<2){
+                    // If only one layer is visible, show the other
+                    $('.textVersion').fadeIn(800);
+                }
+                else{
+                    // Hide the upper layer
+                    versions.eq(0).fadeOut(800);
+                }
+            },1000);
+
+        });
+
+    </script>
 <div class="one row">
     <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
 
@@ -332,12 +397,12 @@
                     <div class="panel-heading">
                         <h3 class="panel-title"><?php echo ($title); ?></h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="neonText">
                       <?php echo ($content); ?>
+                        <span class="textVersion" id="version1"></span>
+                        <span class="textVersion" id="version2"></span>
                     </div>
                 </div>
-
-                <!--<div id = "hideContent" style="display: none;"><?php echo ($title); ?><br/><?php echo ($content); ?></div>-->
 
 <div id="footer">
     <div class="container">
