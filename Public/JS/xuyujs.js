@@ -1,7 +1,6 @@
 
-
-function showHideContent(){
-
-    $("#hideContent").toggle();
-
-}
+$(document).ready(function(){
+    $("#btShowContent").click(function(){
+        $("#hideContent").toggle();
+    });
+});

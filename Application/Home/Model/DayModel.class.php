@@ -22,5 +22,13 @@ public function selAticle($date){
     public function selDate(){
 
     }
+public function  selImage($date){
+    $imageModel=M('Image');
+    $temp=$this->where("date=$date")->select();
+    $data['fid']=$temp[0]['id'];
+    $temp1=$imageModel->where($data)->select();
 
+    return $temp1;
+
+}
 }

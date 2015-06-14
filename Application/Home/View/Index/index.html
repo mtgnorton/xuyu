@@ -20,10 +20,12 @@
 
     <script src="__JQUERY__/jquery-2.1.1.min.js"></script>
     <script src="__PUB__/JS/xuyujs.js"></script>
+    <!--<script src="__PUB__/Musicoon/js/player.js" type="text/javascript"></script>-->
 <script src="__PUB__/index_css_js/jquery.min.js" tppabs="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
 <link rel="stylesheet" href="__PUB__/wufazhuce/bootstrap.min.css" tppabs="http://s2-cdn.wufazhuce.com/bootstrap3/css/bootstrap.min.css">
 <script src="__PUB__/index_css_js/bootstrap.min.js" tppabs="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+    <!--<link rel="stylesheet" href="__PUB__/Musicoon/css/style.css">-->
 <link rel="stylesheet" href="__PUB__/wufazhuce/one.css" tppabs="http://s2-cdn.wufazhuce.com/css/one.css">
 <link rel="shortcut icon" type="image/x-icon" href="http://s2-cdn.wufazhuce.com/images/favicons/favicon.ico">
 <link rel="apple-touch-icon" href="http://s2-cdn.wufazhuce.com/images/favicons/apple-touch-icon.png">
@@ -60,6 +62,9 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <button id="bt1" style="background:#1ab5ff; ">隐藏播放器</button>
+                        </li>
+                        <li>
                             <a href="javascript:if(confirm(%27http://wufazhuce.com/one  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wufazhuce.com/one%27" tppabs="http://wufazhuce.com/one">我想和这个世界谈谈</a>
                         </li>
 
@@ -72,49 +77,223 @@
     </div>
 
 </div>
+<!--<style type="text/css">-->
+    <!--#mm{ border:1px solid #F00; width:200px; height:100px-->
+    <!--}-->
+    <!--</style>-->
+    <!--<div id="mm">-->
+<!--<div class="back">-->
+    <!--<div class="container">-->
+        <!--<div class="player">-->
+            <!--<div id="cd" class="cd">-->
+                <!--<div class="out">-->
+                <!--</div>-->
+                <!--<div id="album" class="album">-->
+                <!--</div>-->
+                <!--<div id="in" class="in">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="action">-->
+                <!--<a href="javascript:m_play()"><img id="m_play" src="images/play.png"></a>-->
+                <!--<input id="range" type="range" min="0" max="10" value="5" onchange="volume(this.value)">-->
+                <!--<a href="javascript:next_music()"><img id="next_music" src="images/forward.png"></a>-->
+            <!--</div>-->
+            <!--<div class="info">-->
+                <!--<span id="music_name"></span><span id="artist"></span>-->
+            <!--</div>-->
+            <!--<div id="lrc" class="lrc">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<audio id="player">-->
+<!--</audio>-->
+<!--</div>-->
+<style type="text/css">
+    /*#d1{*/
+
+    /*}*/
+    /*#d2{*/
+        /*display: block;width: 100px;margin-left:170px;position: relative;*/
+    /*}*/
+    #dd,#d1{  width:300px; height:350px}
+    #d1{
+        font-family: "微软雅黑";
+        background-color: #444444;
+    }
+    #title {
+        color: #bbbbbb;
+    }
+
+    #music_list {
+        color:#aaaaaa;
+    }
+    #music_list li:hover {
+        color: #dd9999;
+        cursor: hand;
+    }
+    </style>
+
+    <script type="text/javascript">
+
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+
+    window.onload = function() {
+        var player = document.getElementById('player'),
+        audioContext = new AudioContext(),
+        playerAnalyser = audioContext.createAnalyser(),
+        playerSource = audioContext.createMediaElementSource(player),
+        timer;
+
+        var canvas = document.getElementById('canvas'),
+        context = canvas.getContext('2d'),
+        CANVAS_WIDTH = canvas.clientWidth,
+        CANVAS_HEIGHT = canvas.clientHeight;
+
+        playerSource.connect(playerAnalyser);
+        playerAnalyser.connect(audioContext.destination);
+
+
+        timer = setInterval(process, 1);
+
+
+    function process () {
+        playerFrequencyData = new Uint8Array(playerAnalyser.frequencyBinCount);
+        playerAnalyser.getByteFrequencyData(playerFrequencyData);
+
+        playerTimeDomainData = new Uint8Array(playerAnalyser.fftSize);
+        playerAnalyser.getByteTimeDomainData(playerTimeDomainData);
+
+        var volumn = Array.max(playerTimeDomainData).value - Array.min(playerTimeDomainData).value,
+        volumnStep = 0.2;
+
+        this.volumnCurrent = this.volumnCurrent || 0;
+    if (this.volumnCurrent < volumn) {
+        this.volumnCurrent += volumnStep;
+    } else {
+          this.volumnCurrent -= volumnStep;
+      }
+    var h = (1 - this.volumnCurrent / 256) * 360,
+    s = (volumn / 256) * 30 + 30 * this.volumnCurrent / 256 ,
+    l =  (volumn / 256) * 30 + 20;
+
+        document.getElementById('d1').style.backgroundColor = 'hsl(' + h + ',' + s + '%, ' +  l + '%)';
+    plot(playerFrequencyData);
+    }
+
+    function plot (array) {
+        var min = Array.min(array),
+        max = Array.max(array);
+        context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        context.beginPath();
+        for (var i = 0; i < array.length; i++) {
+        var x = CANVAS_WIDTH * i / (array.length - 1),
+    y = CANVAS_HEIGHT * (1 - (array[i] - min.value) / (max.value - min.value));
+    if (i == 0) {
+        context.moveTo(x, y);
+    } else {
+          context.lineTo(x, y);
+      }
+    }
+    context.lineTo(0, CANVAS_HEIGHT);
+    context.closePath();
+    context.stroke();
+    }
+
+    var musicList = document.querySelectorAll('#music_list > li');
+
+    for (var i = 0; i < musicList.length; i++) {
+    musicList[i].onclick = function() {
+        player.src = 'http://bcs.duapp.com/brokenjar/' + this.innerText + '.mp3';
+    };
+    }
+    };
+
+    Array.max = function (array) {
+        var value = array[0],
+        index = 0;
+        for (var i = 1; i < array.length; i++) {
+    if (array[i] > value) {
+        value = array[i];
+        index = i;
+    }
+    }
+    return {value : value, index : index};
+    };
+
+    Array.min = function (array) {
+        var value = array[0],
+        index = 0;
+        for (var i = 1; i < array.length; i++) {
+    if (array[i] < value) {
+        value = array[i];
+        index = i;
+    }
+    }
+    return {value : value, index : index};
+    };
+    $(document).ready(function(){
+    $("#btShowContent").click(function(){
+        $("#hideContent").toggle();
+    });
+    $("#bt1").click(function(){
+    switch($("#bt1").text()){
+        case "隐藏播放器":$("#bt1").text("显示播放器");
+        break;
+        case "显示播放器":$("#bt1").text("隐藏播放器");
+        break;
+    }
+    $("#d1").toggle("slow");
+
+    });
+    });
+
+    </script>
+
 
 <div id="main-container" class="container">
-<nav id="one-navbar" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-    <div class="container">
-	    <div class="row">
-		    <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
-			    <ul class="nav navbar-nav">
-				  	<li class="active"><a href="__PUB__/wufazhuce/vol.975.htm#tab-imagen" data-toggle="tab">
-				  		<span class="visible-xs">ONE<br>首页</span>
-				  		<span class="hidden-xs">ONE 首页</span>
-				  	</a></li>
-				  	<li><a href="__PUB__/wufazhuce/vol.975.htm#tab-articulo" data-toggle="tab">
-				  		<span class="visible-xs">ONE<br>文章</span>
-				  		<span class="hidden-xs">ONE 文章</span>
-				  	</a></li>
-				  	<li><a href="__PUB__/index_css_js/VOL.975 - 「ONE · 一个」.html" data-toggle="tab">
-				  		<span class="visible-xs">ONE<br>问题</span>
-				  		<span class="hidden-xs">ONE 问题</span>
-				  	</a></li>
-				  	<li><a href="__PUB__/wufazhuce/vol.975.htm#tab-cosas" data-toggle="tab">
-				  		<span class="visible-xs">ONE<br>东西</span>
-				  		<span class="hidden-xs">ONE 东西</span>
-				  	</a></li>
-			    </ul>
-			    <ul class="nav navbar-nav navbar-right">
-				  	<li><a href="javascript:if(confirm(%27http://wufazhuce.com/one  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wufazhuce.com/one%27" tppabs="http://wufazhuce.com/one">
-				  		<span class="visible-xs">ONE<br>最近10期</span>
-				  		<span class="hidden-xs">ONE 最近10期</span>
-				  	</a></li>
-				</ul>
+<!--<nav id="one-navbar" class="navbar navbar-default navbar-fixed-bottom" role="navigation" >-->
+        <div id="dd" ;  class="container">
+
+            <div id="d1" class="row">
+                <h2 id="title">背景色随节奏变化(chrome only)</h2>
+                <!--<div style="float:left;">-->
+                <canvas id="canvas"></canvas>
+                <br/>
+                <audio id="player" src="http://bcs.duapp.com/brokenjar/Evidence - Marilyn Manson.mp3" autoplay controls></audio>
+                <!--</div>-->
+
+                <ul id="music_list">
+                    <li>王妃 - 萧敬腾</li>
+                    <li>Evidence - Marilyn Manson</li>
+                    <li>主旋律 - 陈奕迅</li>
+                </ul>
+                <div  class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                    <!--<div id="d2" >-->
+
+                        <!--<li class="active"><a href="__PUB__/wufazhuce/vol.975.htm#tab-imagen" data-toggle="tab">-->
+                            <!--<span class="visible-xs">ONE<br>首页</span>-->
+                            <!--<span class="hidden-xs">ONE 首页</span>-->
+                        <!--</a></li>-->
+
+                            <!--<audio style="background:#01AEF0; " loop="loop" src="__PUB__/music/yueban.mp3" controls="controls">-->
+
+                            <!--</audio>-->
+
+
+
+                    <!--</div>-->
+			    <!--<ul class="nav navbar-nav navbar-right">-->
+				  	<!--<li><a href="javascript:if(confirm(%27http://wufazhuce.com/one  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://wufazhuce.com/one%27" tppabs="http://wufazhuce.com/one">-->
+				  		<!--<span class="visible-xs">ONE<br>最近10期</span>-->
+				  		<!--<span class="hidden-xs">ONE 最近10期</span>-->
+				  	<!--</a></li>-->
+				<!--</ul>-->
 			</div>
 	  	</div>
   	</div>
-</nav>
-    <script type="text/javascript">
-
-        $(document).ready(function(){
-            $("#btShowContent").click(function(){
-                $("#hideContent").toggle();
-            });
-        });
-
-    </script>
+<!--</nav>-->
 
 <div class="one row">
     <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -135,7 +314,7 @@
                 <div class="one-cita-wrapper">
                     <div class="one-cita">
 						{$sentence}                 </div>
-                    <button id="btShowContent" name="showContent">查看具体内容</button>
+                    <button id="btShowContent" class="btn btn-default" style="background:#1ab5ff; " name="showContent">查看具体内容</button>
                     <div class="one-pubdate">
                         <p class="dom">{$day}</p>
                         <p class="may">{$month} 2015</p>
