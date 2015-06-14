@@ -11,6 +11,8 @@ class IndexController extends Controller
         $this->display('login');
     }
 
+
+
     public function verify()
     {
         ob_end_clean();
