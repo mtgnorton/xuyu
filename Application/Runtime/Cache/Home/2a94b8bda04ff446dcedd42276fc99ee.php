@@ -118,9 +118,16 @@
     /*}*/
 
     #d1{
-        height: 100px;
+
+        height: 70px;
         font-family: "微软雅黑";
-        background-color: #444444;
+        background-color: #3f96ff;
+    }
+    #d5{
+        position:absolute;
+        right:0;/*   定位到右上   */
+        top:0;
+        float:right;
     }
     #title {
         color: #bbbbbb;
@@ -270,16 +277,16 @@
 
                             <!--</audio>-->
                         <h4 id="title">背景色随节奏变化(chrome only)</h4>
-                        <div style="float:left;">
-                            <canvas id="canvas"></canvas>
+                        <div id="d5" style="float:right;">
+                            <canvas id="canvas"height="40"></canvas>
                             <br/>
                             <audio id="player" src="http://bcs.duapp.com/brokenjar/Evidence - Marilyn Manson.mp3" autoplay controls></audio>
                         </div>
 
                         <ul id="music_list">
                             <li>王妃 - 萧敬腾</li>
-                            <li>Evidence - Marilyn Manson</li>
-                            <li>主旋律 - 陈奕迅</li>
+                            <!--<li>Evidence - Marilyn Manson</li>-->
+                            <!--<li>主旋律 - 陈奕迅</li>-->
                         </ul>
 
 
