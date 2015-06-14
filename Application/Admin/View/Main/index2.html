@@ -14,7 +14,7 @@
 
 
     <link rel="stylesheet" href="__PUBLIC__/uploadify.css">
-    <script src='__PUBLIC__/jquery-1.11.3.min.js'></script>
+    <script src='__PUBLIC__/jquery-1.11.3.js'></script>
     <script src='__PUBLIC__/jquery.uploadify.min.js'></script>
     <!--<script type="text/javascript" src="__ADMIN__/assets/plugins/ckeditor/ckeditor.js"></script>-->
 
@@ -73,7 +73,7 @@
                 <li class="hidden-xs hidden-sm"><a href="#" class="h-seperate">Help</a></li>
                 <li><button class="btn btn-circle btn-header-search" ><i class="fa fa-search"></i></button></li>
                 <li><a href="#" class="nav-collapse avatar-header">
-                    <img alt="" src="__ADMIN__/assets/img/avatar.png"  class="circle">
+                    <img alt="" src="__ADMIN__/assets/img/head.jpg"  class="circle">
                     <span class="badge">3</span>
                 </a>
                 </li>
@@ -115,7 +115,7 @@
 
 								<span class="easy-chart avatar-chart" data-color="theme-inverse" data-percent="69" data-track-color="rgba(255,255,255,0.1)" data-line-width="5" data-size="118">
 										<span class="percent"></span>
-										<img alt="" src="__ADMIN__/assets/img/avatar.png" class="circle">
+										<img alt="" src="__ADMIN__/assets/img/head.jpg" class="circle">
 								</span>
                 <!-- //avatar-chart-->
 
@@ -400,7 +400,25 @@
                         </div>
                         <div class="panel-body">
 
-                            <form id="day" action="__URL__/add"  method="post" class="form-horizontal" data-collabel="3" data-label="color">
+                            <form id="day" action="__URL__/add"  method="post" class="form-horizontal " data-collabel="3" data-label="color">
+                                <div class="form-group">
+                                    <label class="control-label">日期 </label>
+                                    <div>
+                                        <div class="row">
+                                            <div class="input-group date form_datetime col-lg-6" id="datetimepicker"  data-picker-position="bottom-left" data-date="12-02-2012" data-date-format="yyyy dd mm"   >
+                                                <!--<input name="date" type="text" class="form-control">-->
+                                                <input name="date" type="text" class="form-control" value="12-02-2012">
+																								<span class="input-group-btn">
+																								<button class="btn btn-default" type="button"><i class="fa fa-times"></i></button>
+																								<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+																								</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- //form-group-->
+
+
+
                                 <div class="form-group">
                                     <label class="control-label">图片URL </label>
                                     <div>
@@ -555,7 +573,7 @@
                             </div>
                             <h4><a href="javascript:void(0)">Cinda Collar</a>
                             </h4>
-                            <div class="im-thumbnail"><img alt="" src="__ADMIN__/assets/img/avatar.png" /></div>
+                            <div class="im-thumbnail"><img alt="" src="__ADMIN__/assets/img/head.jpg" /></div>
                             <label data-color="theme"></label>
                             <div class="pre-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
                         </section>
@@ -1078,6 +1096,7 @@
 
 
 
+
     function submit_form(){
         var form=document.getElementById('day');
         form.submit();
@@ -1162,6 +1181,12 @@
             //alert(data);
         }
     });
+
+
+    //$('#datetimepicker').datetimepicker('remove');
+    //$('#datetimepicker').datetimepicker();
+
+
 
 
 </script>
