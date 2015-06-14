@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="__PUBLIC__/uploadify.css">
+    <script src='__PUBLIC__/jquery-1.11.3.min.js'></script>
+    <script src='__PUBLIC__/jquery.uploadify.min.js'></script>
+    <script type="text/javascript" src="__ADMIN__/assets/plugins/ckeditor/ckeditor.js"></script>
+    <link href="__PUBLIC__/STATIC/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/STATIC/bootstrap/js/bootstrap.min.js"></script>
+
+<style>
+
+
+
+</style>
+
+
+</head>
+<body>
+
+
+<div style="padding: 20px 30px 10px;">
+    <div class="page-header">
+        <h1>添加页面</h1>
+    </div>
+    <form action="__URL__/add"  method="post" class="bs-example bs-example-form" role="form">
+
+        <div id="imgs"><img width="" src=""></div>
+        <input   id="img_upload" name="photo"  type="file" multiple="true" value="" />
+        <div class="input-group">
+            <span class="input-group-addon">图片Url</span>
+            <input name="imgpath" id="imgpath" type="text" class="form-control" placeholder="">
+        </div>
+        <br>
+        <audio id="mus" controls="" name="media"><source src="" type="audio/mpeg"></audio>
+        <input id="mus_upload" name="photo" type="file" multiple="true" value="" />
+        <div class="input-group">
+
+            <span class="input-group-addon">音乐Url</span>
+            <input name="muspath" id="muspath" type="text" class="form-control" placeholder="">
+        </div>
+        <br>
+
+
+
+        <div class="input-group">
+            <span class="input-group-addon">句子</span>
+            <input name="sentence" type="text" class="form-control" placeholder="">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">标题</span>
+            <input name="title" type="text" class="form-control" placeholder="">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <span class="input-group-addon">作者</span>
+            <input name="author" type="text" class="form-control" placeholder="">
+        </div>
+        <br>
+        <textarea class="ckeditor" cols="80" id="editor1" name="content" rows="10" style="visibility: hidden; display: none;"></textarea>
+        <br>
+        <input type="submit" class="btn btn-primary btn-lg btn-block">
+
+
+    </form>
+    </div>
+
+
+</body>
+
+<script>
+
+
+    var img = '';
+    $('#img_upload').uploadify({
+        'swf'      : '__PUBLIC__/uploadify.swf',
+        'uploader' : '{:U("Admin/Main/uploadImage")}',   //上传的方法
+        'fileTypeExts' : '*.gif; *.jpg; *.png;',//限制文件格式
+        'buttonText' : '图片上传',
+        'onUploadSuccess' : function(file, data, response) {
+            var data = $.parseJSON(data);
+            if (!data['status']) {
+                alert(data['info']);
+                return false;
+            };
+
+            //把所有上传的图片都放入DIV中
+            var path="__PUBLIC__/Uploads/Images/"+data.savename;
+            img += "<img width='200px' src='"+path+"'>";
+            $('#imgs').html(img);
+            $('#imgpath').val(path);
+        }
+    });
+
+    var mus = '';
+    $('#mus_upload').uploadify({
+        'swf'      : '__PUBLIC__/uploadify.swf',
+        'uploader' : '{:U("Admin/Main/uploadMusic")}',   //上传的方法
+        'fileTypeExts' : '*.mp3;*.wav',//限制文件格式
+        'buttonText' : '音乐上传',
+        'onUploadSuccess' : function(file, data, response) {
+            var data = $.parseJSON(data);
+            if (!data['status']) {
+                alert(data['info']);
+                return false;
+            };
+            alert("success");
+
+            //把所有上传的图片都放入DIV中
+
+            //img += "<img width='200px' src='__PUBLIC__/Uploads/Musics/"+data+"'>";
+            mus="__PUBLIC__/Uploads/Musics/"+data.savename;
+            //alert(" "+data.savename);
+            $('#mus').attr("src",mus);
+            $('#muspath').val(mus);
+            //alert(data);
+        }
+    });
+</script>
+
+</html>
