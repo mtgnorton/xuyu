@@ -132,7 +132,7 @@
         var that = this;
 
         this.element = $(element);
-        options.format="yyyy/m/d";
+        options.format="yyyy-m-d";
 
         //alert("hello");
         this.bornIn = options.bornIn || "body";
