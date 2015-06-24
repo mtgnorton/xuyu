@@ -1,0 +1,115 @@
+<include file="header" />
+
+
+
+    <!--
+    /////////////////////////////////////////////////////////////////////////
+    //////////     MAIN SHOW CONTENT     //////////
+    //////////////////////////////////////////////////////////////////////
+    -->
+    <div id="main">
+
+
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+        <!-- //breadcrumb-->
+
+
+
+        <div id="content">
+
+            <form action="__URL__/quickedit" method="post" >
+            <div class="form-group">
+                <label class="control-label">日期 </label>
+                <div>
+                    <div class="row">
+                        <div class="input-group date form_datetime col-lg-6" id="datetimepicker"  data-picker-position="bottom-left" data-date="12-02-2012" data-date-format="yyyy dd mm"   >
+                            <!--<input name="date" type="text" class="form-control">-->
+                            <input name="date" type="text" class="form-control" value="{$today}">
+																								<span class="input-group-btn">
+																								<button class="btn btn-default" type="button"><i class="fa fa-times"></i></button>
+																								<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+
+																								</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- //form-group-->
+
+            <button type="submit" class=" form-group btn btn-theme-inverse"><h5>快速跳转</h5></button>
+
+            </form>
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="widget-timeline">
+                        <ul>
+                            <li class="history">
+																<span>
+																		June 2015
+																</span>
+                            </li>
+                            <foreach name="day" item="vo">
+                                <!--{$vo.id}:{$vo.date}<br/>-->
+                                <if condition="($vo['id']%2 eq 1)">
+                                    <li class="right">
+                                        <else/>
+                                    <li class="left">
+                                </if>
+                                        <section>
+                                            <div class="mark bgimg" style="background-image: url({$img[$vo['id']].originpath})"><i class=" fa"></i></div>
+                                            <div class="timeline-content">
+                                                <time><i class="fa fa-clock-o"></i>{$vo.date}</time>
+                                                <a href="{:U('Main/edit',\"id=$vo[id]\")}" ><h3>{$art[$vo['id']-1].title}</h3></a>
+                                                <!--<p><?php $a=$vo['id']+0; echo $img[$a]['sentence']; ?></p>-->
+
+                                                <p>{$img[$vo['id']].sentence}</p>
+                                                <div class="btn-group">
+                                                    <a href="{:U('Main/edit',\"id=$vo[id]\")}"  type="button" class="btn btn-default" style="border-color: rgb(65, 202, 192); color: rgb(255, 255, 255); background-color: rgb(65, 202, 192);">编辑</a>
+                                                    <a href="{:U('Main/delete',\"id=$vo[id]\")}" type="button" class="btn btn-default">删除</a>
+
+                                                </div>
+
+                                            </div>
+                                        </section>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                            </foreach>
+                            <li class="history">
+																<span>
+																		Load More
+																</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //content > row > col-lg-12 -->
+
+            </div>
+            <!-- //content > row-->
+
+        </div>
+        <!-- //content-->
+
+
+    </div>
+    <!-- //main-->
+
+
+
+<<include file="footer" />
+</body>
+</html>

@@ -1,5 +1,8 @@
 <include file="header" />
 
+
+
+
     <!--
     /////////////////////////////////////////////////////////////////////////
     //////////     MAIN SHOW CONTENT     //////////
@@ -48,7 +51,7 @@
                                     <div>
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img id="imgs" data-src="" alt="">
+                                                <img id="imgs" onerror="defaultimg()" src="{$img.originpath}" data-src="" alt="">
                                             </div>
                                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                                             <!-- //fileinput-preview-->
@@ -123,54 +126,45 @@
                         </div>
                         <div class="panel-body">
 
-                            <form id="day" action="__URL__/add"  method="post" class="form-horizontal " data-collabel="3" data-label="color">
+                            <form id="day" action="__URL__/update"  method="post" class="form-horizontal " data-collabel="3" data-label="color">
+
+
                                 <div class="form-group">
-                                    <label class="control-label"> </label>
+                                    <label class="control-label">日期 </label>
                                     <div>
-                                        <div class="row">
-                                            <div class="input-group date form_datetime col-lg-6" id="datetimepicker"  data-picker-position="bottom-left" data-date="12-02-2012" data-date-format="yyyy dd mm"   >
-                                                <!--<input name="date" type="text" class="form-control">-->
-                                                <input name="date" type="text" class="form-control" value="{$today}">
-																								<span class="input-group-btn">
-																								<button class="btn btn-default" type="button"><i class="fa fa-times"></i></button>
-																								<button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
-																								</span>
-                                            </div>
-                                        </div>
+                                        <input name="date" id="date" value="{$day.date}" type="text" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
-
-
 
                                 <div class="form-group">
                                     <label class="control-label">图片URL </label>
                                     <div>
-                                        <input name="imgpath" id="imgpath" type="text" class="form-control" maxlength="15"  placeholder="" >
+                                        <input name="imgpath" id="imgpath" value="{$img.originpath}" type="text" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
                                 <div class="form-group">
                                     <label class="control-label">音乐URL </label>
                                     <div>
-                                        <input name="muspath" id="muspath" type="text" class="form-control" maxlength="15"  placeholder="" >
+                                        <input name="muspath" id="muspath" value="" type="text" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
                                 <div class="form-group">
                                     <label class="control-label">句子 </label>
                                     <div>
-                                        <input name="sentence" type="text" class="form-control" maxlength="15"  placeholder="" >
+                                        <input name="sentence" type="text" value="{$img.sentence}" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
                                 <div class="form-group">
                                     <label class="control-label">标题 </label>
                                     <div>
-                                        <input name="title" type="text" class="form-control" maxlength="15"  placeholder="" >
+                                        <input name="title" type="text" value="{$art.title}" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
 
                                 <div class="form-group">
                                     <label class="control-label">作者 </label>
                                     <div>
-                                        <input name="author" type="text" class="form-control" maxlength="15"  placeholder="" >
+                                        <input name="author" type="text" value="{$art.author}" class="form-control" maxlength="15"  placeholder="" >
                                     </div>
                                 </div><!-- //form-group-->
 
@@ -179,13 +173,13 @@
                                     <label class="control-label">内容</label>
                                     <div>
                                         <!--<textarea class="form-control"  rows="10"  data-provide="markdown" ></textarea>-->
-                                        <textarea class="ckeditor" cols="80" id="editor1" name="content" rows="10" style="visibility: hidden; display: none;"></textarea>
+                                        <textarea class="ckeditor"  cols="80" id="editor1" name="content" rows="10" style="visibility: hidden; display: none;">{$art.content}</textarea>
                                     </div>
                                 </div><!-- //form-group-->
 
 
 
-                                <input class="btn btn-theme-inverse btn-block" type="submit">
+                                <input type="submit">
 
                             </form>
                         </div><!-- //panel-body-->
@@ -215,9 +209,15 @@
     <!-- //main-->
 
 
-    <include file="footer" />
 
+<include file="footer" />
+<script>
+    function defaultimg(){
+//        alert("hello");
+        $('#imgs').attr('src','__PUBLIC__/default.jpg');
 
+    }
 
+</script>
 </body>
 </html>
