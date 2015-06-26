@@ -11,9 +11,13 @@ $this->assign("nowdays",$nowdays);
 
         $dayModel=new DayModel();
 //        $dayModel=
-
        $daohang=$dayModel->selDaoHang($date);
 $this->assign("daohang",$daohang);
+$music=$dayModel->selMusic($date);
+
+
+        $this->assign("musicName",$music[0]['name']);
+$this->assign("musicPath",$music[0]['musicpath']);
 
         $nowarticle=$dayModel->selAticle($nowdays);
         $nowtitle=$nowarticle[0][title];
@@ -34,7 +38,7 @@ $this->assign("daohang",$daohang);
         $this->assign('author',$author);
         $this->display();
     }
-    public function test(){
-
+    public function login(){
+$this->display();
     }
 }
