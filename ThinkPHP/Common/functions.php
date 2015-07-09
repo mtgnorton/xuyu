@@ -578,12 +578,14 @@ function vendor($class, $baseUrl = '', $ext='.php') {
  * @return Think\Model
  */
 function D($name='',$layer='') {
+    //print_r('ssss');
     if(empty($name)) return new Think\Model;
     static $_model  =   array();
     $layer          =   $layer? : C('DEFAULT_M_LAYER');
     if(isset($_model[$name.$layer]))
         return $_model[$name.$layer];
     $class          =   parse_res_name($name,$layer);
+    //print_r($class);
     if(class_exists($class)) {
         $model      =   new $class(basename($name));
     }elseif(false === strpos($name,'/')){
