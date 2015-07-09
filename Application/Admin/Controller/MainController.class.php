@@ -132,7 +132,7 @@ class MainController extends Controller
     public function  update()
     {
 
-        print_r($_POST);
+        //print_r($_POST);
         $id = $_POST['id'];
         $d = $_POST;
 
@@ -151,16 +151,18 @@ class MainController extends Controller
 //        $day->where($data)->save();
         //dump($list);
 
-        $image = M("Image"); // 实例化User对象
-        $image->where($otherdate)->save($img);
+        $images = M("Image"); // 实例化User对象
+        $images->where($otherdate)->save($img);
 
 
-        $article = M("article"); // 实例化User对象
-        $article->where($otherdate)->save($article);
+        $articles = M("article"); // 实例化User对象
+        $articles->where($otherdate)->save($article);
 
 
-        $music = M("music"); // 实例化User对象
-        $music->where($otherdate)->save($music);
+        $musics = M("music"); // 实例化User对象
+        $musics->where($otherdate)->save($music);
+
+        $this->success('修改成功', '/Admin/Main/lookup');
 
 
     }
@@ -193,7 +195,7 @@ class MainController extends Controller
 
     }
 
-
+//修改
     public function  edit()
     {
 
@@ -287,7 +289,7 @@ class MainController extends Controller
 
     public function add()
     {
-        print_r($_POST);
+        //print_r($_POST);
         return;
         $time = $_POST['date'];
         echo $time;
