@@ -4,9 +4,15 @@ use Home\Model\DayModel;
 use Think\Controller;
 class IndexController extends Controller
 {
-    public function index($date="2015-6-30"){
-     $this->assign('date',$date);
-$nowdays="2015-6-30";
+    public function index($date=""){
+        $dayModel=new DayModel();
+
+
+
+$nowdays=$dayModel->getNow();
+        echo $nowdays;
+        $date==null?$nowdays:$date;
+        $this->assign('date',$date);
 $this->assign("nowdays",$nowdays);
 
         $dayModel=new DayModel();
@@ -15,7 +21,7 @@ $this->assign("nowdays",$nowdays);
 $this->assign("daohang",$daohang);
 $music=$dayModel->selMusic($date);
 
-
+$dayModel->mm();
         $this->assign("musicName",$music[0]['name']);
 $this->assign("musicPath",$music[0]['musicpath']);
 
