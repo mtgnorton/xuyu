@@ -27,6 +27,7 @@ return array(
     'LOG_LEVEL'  =>'EMERG,ALERT,CRIT,ERR',
     'LOG_TYPE'              =>  'File',
     TMPL_PARSE_STRING=>array(
+        '__ADMIN__'=>__ROOT__.'/Public/Admin',
         '__BOOT__'=>__ROOT__.'/Public/STATIC/bootstrap',
         '__JQUERY__'=>__ROOT__.'/Public/STATIC/jquery',
             '__PUB__'=>__ROOT__.'/Public',
