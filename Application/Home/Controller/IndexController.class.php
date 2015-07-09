@@ -21,7 +21,7 @@ $this->assign("nowdays",$nowdays);
 $this->assign("daohang",$daohang);
 $music=$dayModel->selMusic($date);
 
-$dayModel->mm();
+//$dayModel->mm();
         $this->assign("musicName",$music[0]['name']);
 $this->assign("musicPath",$music[0]['musicpath']);
 

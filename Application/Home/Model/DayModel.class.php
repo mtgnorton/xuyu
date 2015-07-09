@@ -23,33 +23,33 @@ public function selAticle($date){
 
 }
     public function  getNow(){
-        $now=date("Y-m-d",time());
+        $now=date("Y-n-j",time());
     return $now;
     }
-    public function mm(){
-        $musicModel=M('Music');
-        $d1['name']="父亲";
-        $d1['musicpath']="/xuyu/Public/music/父亲.mp3";
-        $d2['name']="假如爱有天意";
-        $d2['musicpath']="/xuyu/Public/music/love.mp3";
-        for($i=1;$i<100;$i++){
-            if($i%2){
-                $data=$d2;
-                $data['fid']=$i;
-            }
-            else if($i==13)
-            {
-                continue;
-            }
-            else
-            {
-                $data=$d1;
-                $data['fid']=$i;
-            }
-$musicModel->add($data);
-        }
-        echo "chenggong";
-    }
+//    public function mm(){
+//        $musicModel=M('Music');
+//        $d1['name']="父亲";
+//        $d1['musicpath']="/xuyu/Public/music/父亲.mp3";
+//        $d2['name']="假如爱有天意";
+//        $d2['musicpath']="/xuyu/Public/music/love.mp3";
+//        for($i=1;$i<100;$i++){
+//            if($i%2){
+//                $data=$d2;
+//                $data['fid']=$i;
+//            }
+//            else if($i==13)
+//            {
+//                continue;
+//            }
+//            else
+//            {
+//                $data=$d1;
+//                $data['fid']=$i;
+//            }
+//$musicModel->add($data);
+//        }
+//        echo "chenggong";
+//    }
     public function selMusic($date){
         $musicModel=M('Music');
         $arr['date']=$date;
