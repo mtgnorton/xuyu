@@ -4,7 +4,7 @@ use Home\Model\DayModel;
 use Think\Controller;
 class IndexController extends Controller
 {
-    public function index($date=""){
+    public function index($date="2015-6-30"){
         $dayModel=new DayModel();
 
 
