@@ -71,10 +71,10 @@ public function  selImage($date){
     public function  selDaoHang($date){
         $contentModel=M('Article');
         $dateArr=explode("-",$date);
-        $start=$dateArr[2]-7;
-        $end=$dateArr[2];
-        for($start;$start<=$end;$start++){
-            $date_new="2015-6-".$start;
+        $start=1;
+        $end=8;
+        for($end;$end>=$start;$end--){
+            $date_new="$dateArr[0]-$dateArr[1]-".date("j",strtotime("-$end day"));
 
             $arr['date']=$date_new;
             $temp=$this->where($arr)->select();

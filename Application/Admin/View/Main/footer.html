@@ -586,7 +586,7 @@
 <!-- Library Themes Customize-->
 <script type="text/javascript" src="__ADMIN__/assets/js/caplet.custom.js"></script>
 
-<script type="text/javascript" src='__PUBLIC__/jquery.uploadify.min.js'></script>
+<script type="text/javascript" src='__ADMIN__/jquery.uploadify.min.js'></script>
 <script type="text/javascript">
     // Call CkEditor
     //    CKEDITOR.replace( 'editorCk', {
@@ -621,7 +621,7 @@
     $(document).ready(function(){
 
                 $('#img_upload').uploadify({
-                    'swf'      : '__PUBLIC__/uploadify.swf',
+                    'swf'      : '__ADMIN__/uploadify.swf',
                     'uploader' : '{:U("Admin/Main/uploadImage")}',   //上传的方法
                     'fileTypeExts' : '*.gif; *.jpg; *.png;',//限制文件格式
                     'buttonText' : '图片上传',
@@ -667,7 +667,7 @@
 
 
                 $('#mus_upload').uploadify({
-                    'swf'      : '__PUBLIC__/uploadify.swf',
+                    'swf'      : '__ADMIN__/uploadify.swf',
                     'uploader' : '{:U("Admin/Main/uploadMusic")}',   //上传的方法
                     'fileTypeExts' : '*.mp3;*.wav',//限制文件格式
                     'buttonText' : '音乐上传',
