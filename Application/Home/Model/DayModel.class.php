@@ -23,33 +23,33 @@ public function selAticle($date){
 
 }
     public function  getNow(){
-        $now=date("Y-m-d",time());
+        $now=date("Y-n-j",time());
     return $now;
     }
-    public function mm(){
-        $musicModel=M('Music');
-        $d1['name']="父亲";
-        $d1['musicpath']="/xuyu/Public/music/父亲.mp3";
-        $d2['name']="假如爱有天意";
-        $d2['musicpath']="/xuyu/Public/music/love.mp3";
-        for($i=1;$i<100;$i++){
-            if($i%2){
-                $data=$d2;
-                $data['fid']=$i;
-            }
-            else if($i==13)
-            {
-                continue;
-            }
-            else
-            {
-                $data=$d1;
-                $data['fid']=$i;
-            }
-$musicModel->add($data);
-        }
-        echo "chenggong";
-    }
+//    public function mm(){
+//        $musicModel=M('Music');
+//        $d1['name']="父亲";
+//        $d1['musicpath']="/xuyu/Public/music/父亲.mp3";
+//        $d2['name']="假如爱有天意";
+//        $d2['musicpath']="/xuyu/Public/music/love.mp3";
+//        for($i=1;$i<100;$i++){
+//            if($i%2){
+//                $data=$d2;
+//                $data['fid']=$i;
+//            }
+//            else if($i==13)
+//            {
+//                continue;
+//            }
+//            else
+//            {
+//                $data=$d1;
+//                $data['fid']=$i;
+//            }
+//$musicModel->add($data);
+//        }
+//        echo "chenggong";
+//    }
     public function selMusic($date){
         $musicModel=M('Music');
         $arr['date']=$date;
@@ -71,10 +71,10 @@ public function  selImage($date){
     public function  selDaoHang($date){
         $contentModel=M('Article');
         $dateArr=explode("-",$date);
-        $start=$dateArr[2]-7;
-        $end=$dateArr[2];
-        for($start;$start<=$end;$start++){
-            $date_new="2015-6-".$start;
+        $start=1;
+        $end=8;
+        for($end;$end>=$start;$end--){
+            $date_new="$dateArr[0]-$dateArr[1]-".date("j",strtotime("-$end day"));
 
             $arr['date']=$date_new;
             $temp=$this->where($arr)->select();

@@ -131,12 +131,13 @@ class MainController extends Controller
 
     public function  update()
     {
+        print_r($_POST);
 
         //print_r($_POST);
         $id = $_POST['id'];
         $d = $_POST;
 
-        $article['title'] = $d['title'];
+        $article['title'] = 'VOL.9243';
         $article['content'] = $d['content'];
         $article['author'] = $d['author'];
 
@@ -144,6 +145,7 @@ class MainController extends Controller
 
         $img['originpath'] = $d['imgpath'];
         $img['sentence'] = $d['sentence'];
+        $img['']
 
 //        $day = M("day"); // 实例化User对象
         $data['id'] = $id;
